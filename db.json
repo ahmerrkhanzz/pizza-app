@@ -30,7 +30,7 @@
       "name": "Tomatoes",
       "price": 1.00,
       "currency": "$",
-      "category": "Veg Toppings"
+      "category": "Veg Toppings",
       "small": false,
       "medium": false,
       "large": false,
