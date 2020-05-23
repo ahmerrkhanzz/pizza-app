@@ -31,48 +31,80 @@
       "price": 1.00,
       "currency": "$",
       "category": "Veg Toppings"
+      "small": false,
+      "medium": false,
+      "large": false,
+      "extraLarge": false
     },
     {
       "name": "Onions",
       "price": 0.50,
       "currency": "$",
-      "category": "Veg Toppings"
+      "category": "Veg Toppings",
+      "small": false,
+      "medium": false,
+      "large": false,
+      "extraLarge": false
     },
     {
       "name": "Bell Paper",
       "price": 1.00,
       "currency": "$",
-      "category": "Veg Toppings"
+      "category": "Veg Toppings",
+      "small": false,
+      "medium": false,
+      "large": false,
+      "extraLarge": false
     },
     {
       "name": "Mushrooms",
       "price": 1.20,
       "currency": "$",
-      "category": "Veg Toppings"
+      "category": "Veg Toppings",
+      "small": false,
+      "medium": false,
+      "large": false,
+      "extraLarge": false
     },
     {
       "name": "Pineapple",
       "price": 0.75,
       "currency": "$",
-      "category": "Veg Toppings"
+      "category": "Veg Toppings",
+      "small": false,
+      "medium": false,
+      "large": false,
+      "extraLarge": false
     },
     {
       "name": "Sausage",
       "price": 1.00,
       "currency": "$",
-      "category": "Non Veg Toppings"
+      "category": "Non Veg Toppings",
+      "small": false,
+      "medium": false,
+      "large": false,
+      "extraLarge": false
     },
     {
       "name": "Pepperoni",
       "price": 2.00,
       "currency": "$",
-      "category": "Non Veg Toppings"
+      "category": "Non Veg Toppings",
+      "small": false,
+      "medium": false,
+      "large": false,
+      "extraLarge": false
     },
     {
       "name": "Barbecue Chicked",
       "price": 3.00,
       "currency": "$",
-      "category": "Non Veg Toppings"
+      "category": "Non Veg Toppings",
+      "small": false,
+      "medium": false,
+      "large": false,
+      "extraLarge": false
     }
   ]
 }
