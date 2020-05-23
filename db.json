@@ -1,0 +1,28 @@
+{
+  "pizzaSizes": [
+    {
+      "size": "Small",
+      "alis": "sm",
+      "price": 5,
+      "currency": "$"
+    },
+    {
+      "size": "Medium",
+      "alias": "md",
+      "price": 7,
+      "currency": "$"
+    },
+    {
+      "size": "Large",
+      "alias": "l",
+      "price": 8,
+      "currency": "$"
+    },
+    {
+      "size": "Extra Large",
+      "alias": "xl",
+      "price": 7,
+      "currency": "$"
+    }
+  ]
+}
