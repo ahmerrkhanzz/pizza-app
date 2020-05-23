@@ -2,7 +2,7 @@
   "pizzaSizes": [
     {
       "size": "Small",
-      "alis": "small",
+      "alias": "small",
       "price": 5,
       "currency": "$"
     },
