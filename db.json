@@ -2,25 +2,25 @@
   "pizzaSizes": [
     {
       "size": "Small",
-      "alis": "sm",
+      "alis": "small",
       "price": 5,
       "currency": "$"
     },
     {
       "size": "Medium",
-      "alias": "md",
+      "alias": "medium",
       "price": 7,
       "currency": "$"
     },
     {
       "size": "Large",
-      "alias": "l",
+      "alias": "large",
       "price": 8,
       "currency": "$"
     },
     {
       "size": "Extra Large",
-      "alias": "xl",
+      "alias": "extraLarge",
       "price": 7,
       "currency": "$"
     }
