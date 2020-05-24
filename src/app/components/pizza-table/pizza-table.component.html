@@ -1,0 +1,63 @@
+<div class="pizzaTable">
+  <table class="table">
+    <thead>
+      <tr class="table-header">
+        <th rowspan="2">Toppings</th>
+        <th colspan="4">Pizza Size</th>
+      </tr>
+      <tr>
+        <td *ngFor="let item of pizzaSizes">{{item.size}} ({{item.currency}}{{item.price}})</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="table-header">
+        <td colspan="5">Veg Toppings</td>
+      </tr>
+      <tr *ngFor="let item of vegToppings">
+        <td>{{item.name}} ({{item.currency}}{{item.price}})</td>
+        <td><input type="checkbox" name="small" [(ngModel)]="item.small" (change)="changeSelection($event, item)"></td>
+        <td><input type="checkbox" name="medium" [(ngModel)]="item.medium" (change)="changeSelection($event, item)">
+        </td>
+        <td><input type="checkbox" name="large" [(ngModel)]="item.large" (change)="changeSelection($event, item)"></td>
+        <td><input type="checkbox" name="extraLarge" [(ngModel)]="item.extraLarge"
+            (change)="changeSelection($event, item)"></td>
+      </tr>
+      <tr class="table-header">
+        <td colspan="5">Non Veg Toppings</td>
+      </tr>
+      <tr *ngFor="let item of nonVegToppings">
+        <td>{{item.name}} ({{item.currency}}{{item.price}})</td>
+        <td><input type="checkbox" name="small" [(ngModel)]="item.small" (change)="changeSelection($event, item)"></td>
+        <td><input type="checkbox" name="medium" [(ngModel)]="item.medium" (change)="changeSelection($event, item)">
+        </td>
+        <td><input type="checkbox" name="large" [(ngModel)]="item.large" (change)="changeSelection($event, item)"></td>
+        <td><input type="checkbox" name="extraLarge" [(ngModel)]="item.extraLarge"
+            (change)="changeSelection($event, item)"></td>
+      </tr>
+      <tr class="table-header">
+        <td>Total</td>
+        <td>{{totalCurrency}}{{totals.small}}</td>
+        <td>
+          <span [ngClass]="{'table-oldPrice': (showOffer1 || showOffer2)}">{{totalCurrency}}{{totals.medium}}</span>
+        </td>
+        <td>
+          <span [ngClass]="{'table-oldPrice': showOffer3}">{{totalCurrency}}{{totals.large}}</span>
+        </td>
+        <td>{{totalCurrency}}{{totals.extraLarge}}</td>
+      </tr>
+      <tr class="table-header offer">
+        <td>Offer</td>
+        <td></td>
+        <td>
+          <span *ngIf="showOffer1">Offer 1 - {{totalCurrency}}{{offers.offer1}}</span>
+          <span *ngIf="showOffer2">Offer 2 - {{totalCurrency}}{{offers.offer2}}</span>
+        </td>
+        <td>
+          <span *ngIf="showOffer3">Offer 3 - {{totalCurrency}}{{offers.offer3}}</span>
+        </td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>

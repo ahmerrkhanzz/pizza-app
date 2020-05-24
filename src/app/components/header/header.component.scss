@@ -1,0 +1,9 @@
+@import "../../../assets/scss/_variables.scss";
+
+.header {
+  height: 7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $primary-text-color;
+}
