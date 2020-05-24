@@ -74,8 +74,6 @@ export class PizzaTableComponent implements OnInit {
 
   calculateTotal(event) {
     this.totals[event.target.name] = 0
-    // console.log(this.subTotals[event.target.name].toFixed(0));
-
     if (this.subTotals[event.target.name].toFixed(0) > 0) {
       let pizzaPrice = this.pizzaSizes.filter(e => e.alias === event.target.name)
       this.totals[event.target.name] = this.subTotals[event.target.name] + pizzaPrice[0].price
@@ -89,35 +87,42 @@ export class PizzaTableComponent implements OnInit {
   }
 
   checkOffer(event) {
-    this.showOffer1 = false
-    this.showOffer2 = false
-    this.showOffer3 = false
     let originalToppings = this.removeDuplicates(this.selectedToppings, 'name')
-    const mediumToppings = originalToppings.filter(e => e.medium)
-    const largeToppingsA = originalToppings.filter(e => e.large && (e.name !== 'Pepperoni' && e.name !== 'Barbecue Chicken'))
-    const largeToppingsB = originalToppings.filter(e => e.large && (e.name === 'Pepperoni' || e.name === 'Barbecue Chicken'))
-    const largeToppingsC = originalToppings.filter(e => e.large)
-    if (mediumToppings.length === 2) {
-      this.showOffer1 = true
-    } else if (mediumToppings.length === 4) {
-      this.showOffer2 = true
-    }
-
-    if (largeToppingsB.length === 2 && !largeToppingsA.length) {
-      this.showOffer3 = true
-      this.offers.offer3 = this.totals[event.target.name] / 2
-    } else if (largeToppingsA.length === 4) {
-      this.showOffer3 = true
-      this.offers.offer3 = this.totals[event.target.name] / 2
-    } else if (largeToppingsC.length === 3) {
-      if (largeToppingsC.filter(e => e.large && (e.name === 'Pepperoni' || e.name === 'Barbecue Chicken')).length === 1) {
-        this.showOffer3 = true
-        this.offers.offer3 = this.totals[event.target.name] / 2
+    if (event.target.name === 'medium') {
+      const mediumToppings = originalToppings.filter(e => e.medium)
+      if (mediumToppings.length === 2) {
+        this.showOffer1 = true
+        this.showOffer2 = false
+      } else if (mediumToppings.length === 4) {
+        this.showOffer2 = true
+        this.showOffer1 = false
+      } else {
+        this.showOffer1 = false
+        this.showOffer2 = false
       }
     }
 
-
-
+    if (event.target.name === 'large') {
+      const largeToppingsA = originalToppings.filter(e => e.large && (e.name !== 'Pepperoni' && e.name !== 'Barbecue Chicken'))
+      const largeToppingsB = originalToppings.filter(e => e.large && (e.name === 'Pepperoni' || e.name === 'Barbecue Chicken'))
+      const largeToppingsC = originalToppings.filter(e => e.large)
+      if (largeToppingsB.length === 2 && !largeToppingsA.length) {
+        this.showOffer3 = true
+        this.offers.offer3 = this.totals[event.target.name] / 2
+      } else if (largeToppingsA.length === 4) {
+        this.showOffer3 = true
+        this.offers.offer3 = this.totals[event.target.name] / 2
+      } else if (largeToppingsC.length === 3) {
+        if (largeToppingsC.filter(e => e.large && (e.name === 'Pepperoni' || e.name === 'Barbecue Chicken')).length === 1) {
+          this.showOffer3 = true
+          this.offers.offer3 = this.totals[event.target.name] / 2
+        } else {
+          this.showOffer3 = false
+        }
+      } else {
+        this.showOffer3 = false
+      }
+    }
   }
 
 }
